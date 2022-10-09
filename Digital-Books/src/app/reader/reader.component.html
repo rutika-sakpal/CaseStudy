@@ -1,0 +1,134 @@
+<div class="bg-image" style="background-image: url('https://limbd.org/wp-content/uploads/2020/12/Digital-Library.png');
+            height: 100vh">              
+  
+  <div class="container py-5 h-100">
+   
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class=" justify-content-center mb-4 pb-2 pb-md-0 mb-md-5">Search Books</h3>
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="firstName" class="form-control form-control-lg" z
+                      [(ngModel)]="SearchBookModel.title" [ngModelOptions]="{standalone: true}" />
+                    <label class="form-label" for="firstName">Title</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="lastName" class="form-control form-control-lg" />
+                    <label class="form-label" for="lastName">Author</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input type="text" id="emailAddress" class="form-control form-control-lg"
+                      [(ngModel)]="SearchBookModel.publisher" [ngModelOptions]="{standalone: true}" />
+                    <label class="form-label" for="emailAddress">Publisher</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input type="text" id="phoneNumber" class="form-control form-control-lg" />
+                    <label class="form-label" for="phoneNumber">Release Date</label>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-2 pt-2">
+                <button class="btn btn-primary btn-lg" type="submit" value="Submit" (click)="GetAllAuthorBook()">
+                  Search</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-top: 70px;">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>Title</td>
+        <td>Category</td>
+        <td>Publisher</td>
+        <td>Price</td>
+        <td>Book Content</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of SearchBookModels">
+        <td>{{book.title}}</td>
+        <td>{{book.category}}</td>
+        <td>{{book.publisher}}</td>
+        <td>{{book.price}}</td>
+        <td>{{book.bookContent}}</td>
+        <td><a (click)="openNewModal(book.authorBookId)" class="btn btn-primary">View Book</a></td> &nbsp;
+        <td><a (click)="GetAuthorBookDetailById(book.authorBookId)"  class="btn btn-primary" >Buy Book</a></td> 
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Book Details</h4>
+        <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
+            aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+      
+        <div *ngFor="let mdata of ModelData">
+          <img src="https://localhost:44307/{{mdata.image}}" height="200" width="300">
+          <p>Title: {{mdata.title}}</p>
+          <p>Publisher: {{mdata.publisher}}</p>
+          <p>Category: {{mdata.category}}</p>
+          <p>Content: {{mdata.bookContent}}</p>
+
+        </div>
+     
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Book Details</h4>
+        <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
+            aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+      
+        <div *ngFor="let mdata of ModelData">
+          <img src="https://localhost:44307/{{mdata.image}}" height="200" width="300">
+          <p>Title: {{mdata.title}}</p>
+          <p>Publisher: {{mdata.publisher}}</p>
+          <p>Category: {{mdata.category}}</p>
+          <p>Content: {{mdata.bookContent}}</p>
+
+        </div>
+     
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="onCloseHandled()">Purchase Book</button>   
+      </div>
+    </div>
+  </div>
+</div>

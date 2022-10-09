@@ -1,0 +1,109 @@
+<!-- <div *ngFor="let mdata of ModelData">
+    <img src="https://localhost:44307/{{mdata.image}}" height="200" width="300">
+    <p>Title: {{mdata.title}}</p>
+    <p>Publisher: {{mdata.publisher}}</p>
+    <p>Category: {{mdata.category}}</p>
+    <p>Content: {{mdata.bookContent}}</p>
+
+  </div> -->
+
+<section class="vh-100">
+  <div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+
+        <div class="input-group-append">
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div *ngFor="let mdata of ModelData">
+          <img src="https://localhost:44307/{{mdata.image}}" height="300" width="400">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div *ngFor="let mdata of ModelData">
+        <h4>Book Details</h4>
+        <div>
+          <label><strong>Title:</strong></label>{{mdata.title}}
+        </div>
+        <div>
+          <label><strong>Publisher:</strong></label>
+          {{mdata.publisher}}
+        </div>
+        <div>
+          <label><strong>Category:</strong></label>
+          {{mdata.category}}
+        </div>
+        <div>
+          <label><strong>Price:</strong></label>
+          ₹{{mdata.price}}
+        </div>
+        <div>
+          <label><strong>Book Content:</strong></label>
+          {{mdata.bookContent}}
+        </div>
+        <br />
+        <div>
+          <label class="form-check-inline">
+            <input class="form-check-input" [(ngModel)]="PurchaseModel.paymentMethod" (click)="setradio('cod')"
+              value="cod" type="radio" name="cod" [checked]='true'>
+            Cash On Delivery
+          </label>
+          <label class="form-check-inline">
+            <input class="form-check-input" [(ngModel)]="PurchaseModel.paymentMethod" (click)="setradio('card')"
+              value="card" type="radio" name="card">
+            Debit Card
+          </label>
+        </div>
+        <br />
+        <div>
+
+          PinCode: &nbsp;<input name="pincode" [(ngModel)]="PurchaseModel.pincode" placeholder="PinCode" type="number"
+            id="pincode" />
+        </div>
+        <br />
+        <div>
+
+          Address: &nbsp;<input name="address" [(ngModel)]="PurchaseModel.address" placeholder="Address" type="text"
+            id="address" />
+        </div>
+        <br />
+        <div *ngIf="isSelected('card')">
+          <div>Card Holder Name: &nbsp;<input name="cardholdername" placeholder="Card Holder Name" type="text"
+              id="cardholdername" [(ngModel)]="PurchaseModel.cardHolderName" /></div> <br />
+          <div>
+            Card Number: &nbsp;<input name="cardnumber" [(ngModel)]="PurchaseModel.cardNumber"
+              placeholder="XXXX XXXX XXXX" type="text" id="cardnumber" />
+          </div>
+          <br />
+          <div>
+
+            CVV: &nbsp;<input name="cvv" [(ngModel)]="PurchaseModel.cvv" placeholder="XXX" type="text" id="cvv" />
+          </div>
+
+        </div>
+        <div *ngIf="isSelected('cod')">
+
+        </div>
+        <br />
+        <div>
+          Total: ₹{{mdata.price}}
+          <input type="number" hidden="true" [(ngModel)]="PurchaseModel.amount" value="{{mdata.price}}">
+        </div>
+        <br />
+        <div>
+          <button class='btn btn-success pull-right' (click)="SaveBookOrder($event)">
+            Place Order
+          </button>
+        </div>
+      </div>
+      <div>
+        <br />
+      </div>
+    </div>
+  </div>
+</section>

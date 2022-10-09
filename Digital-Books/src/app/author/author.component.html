@@ -1,0 +1,207 @@
+<!-- <h2>Welcome To Author Home Page!</h2>
+Title:<input [(ngModel)]="AuthorBookModel.title"  type="text" /><br/><br/>
+Category:<input [(ngModel)]="AuthorBookModel.category"  type="text" /><br/><br/>
+Publisher:<input [(ngModel)]="AuthorBookModel.publisher"  type="text" /><br/><br/>
+Price:<input [(ngModel)]="AuthorBookModel.price"  type="number" /><br/><br/>
+Book Content:<input [(ngModel)]="AuthorBookModel.bookContent"  type="text" /><br/><br/>
+<input type="button"  value="Add Book" (click)="AddAuthorBook()" />
+-->
+
+
+<div class="container" style="margin-top: 70px;">
+    <div class="col-sm-8 offset-sm-2">
+
+        <div>
+        <form>
+            <div class="form-group">
+
+                <!-- Form Name -->
+                <legend>
+                    <h2><b>Create Book</b></h2>
+                </legend><br>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Title</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input [(ngModel)]="AuthorBookModel.title" name="title" placeholder="Title"
+                                class="form-control" type="text" id="title" #title="ngModel" required>
+                            <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert">
+                                <div *ngIf="title.errors?.['required']">
+                                    <p style="color: red;">Title is required.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Category</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input  [(ngModel)]="AuthorBookModel.category" name="category" placeholder="Category"
+                                class="form-control" type="text" id="category" #category="ngModel" required>
+                            <div *ngIf="category.invalid && (category.dirty || category.touched)" class="alert">
+                                <div *ngIf="category.errors?.['required']">
+                                    <p style="color: red;">Category is required.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Image</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="file" class="form-control" [ngModelOptions]="{standalone: true}"
+                                [(ngModel)]="AuthorBookModel.image" (change)="uploadFile($event)" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Price</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="price" [(ngModel)]="AuthorBookModel.price" placeholder="Price"
+                                class="form-control" type="text" id="price" #price="ngModel" required>
+                                <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert">
+                                    <div *ngIf="price.errors?.['required']">
+                                        <p style="color: red;">Price is required.</p>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Publisher</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input [(ngModel)]="AuthorBookModel.publisher" name="publisher" placeholder="Publisher"
+                                class="form-control" type="text" id="publisher" #publisher="ngModel" required>
+                            <div *ngIf="publisher.invalid && (publisher.dirty || publisher.touched)" class="alert">
+                                <div *ngIf="publisher.errors?.['required']">
+                                    <p style="color: red;">Publisher is required.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Active</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input name="active" [(ngModel)]="AuthorBookModel.isActive" placeholder="Active"
+                                class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Content</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input [(ngModel)]="AuthorBookModel.bookContent" name="content" placeholder="Content"
+                                class="form-control" type="text" id="content" #content="ngModel" required>
+
+                            <div *ngIf="content.invalid && (content.dirty || content.touched)" class="alert">
+                                <div *ngIf="content.errors?.['required']">
+                                    <p style="color: red;">Book Content is required.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row"  *ngIf="showMsg">
+                    <div class="col-xs-12">
+                      <p class="alert alert-success">
+                          <strong>Success!</strong>           
+                      </p>
+                    </div>
+                  </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4"><br>
+                        <button type="submit" class="btn btn-primary" (click)="AddAuthorBook($event)">Save <span
+                                class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+
+<!-- <table>
+    <tr>
+            <td>Title</td>
+            <td>Category</td>
+            <td>Publisher</td>
+            <td>Price</td>
+            <td>Book Content</td>
+    </tr>
+    <tr *ngFor ="let book of AuthorBookModels">
+        <td>{{book.title}}</td>
+        <td>{{book.category}}</td>
+        <td>{{book.publisher}}</td>
+        <td>{{book.price}}</td>
+        <td>{{book.bookContent}}</td>
+    </tr>
+</table>  -->
+
+<!-- <table class="table align-middle mb-0 bg-white table table-bordered table-striped">
+    <thead class="bg-light">
+        <tr>
+            <td><p class="fw-bold mb-1">Title</p></td>
+            <td><p class="fw-bold mb-1">Category</p></td>
+            <td><p class="fw-bold mb-1">Publisher</p></td>
+            <td><p class="fw-bold mb-1">Price</p></td>
+            <td><p class="fw-bold mb-1">Book Content</p></td>
+            <td><p class="fw-bold mb-1">Action</p></td>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ="let book of AuthorBookModels">
+        <td>
+          <div class="d-flex align-items-center">
+          
+            <div class="ms-3">
+              <p class="fw-normal mb-1">{{book.title}}</p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <p class="fw-normal mb-1">{{book.category}}</p>
+        </td>
+        <td>
+            <p class="fw-normal mb-1">{{book.publisher}}</p>
+        </td>
+        <td><p class="fw-normal mb-1">{{book.price}}</p></td>
+        <td><p class="fw-normal mb-1">{{book.bookContent}}</p></td>
+        <td>
+            <a (click)="EditBook()" class="btn btn-primary">Edit</a> &nbsp;
+            <a (click)="DeleteBook()" class="btn btn-primary">Delete</a>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table> -->
+  <div class="container" style="margin-top: 70px;">
+<app-grid-ui [grid-columns]="[{'colName':'title'},{'colName':'category'},{'colName':'publisher'},
+{'colName':'price'},{'colName':'bookContent'},{'colName':'isActive'}]" [grid-data]="AuthorBookModels"
+    (grid-selected)="EditBook($event)" (grid-deleted)="DeleteBook($event)" (grid-block)="BlockBook($event)">
+</app-grid-ui>
+  </div>

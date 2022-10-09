@@ -1,0 +1,122 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container-fluid">
+    <!-- <h2>Digital Books App</h2> -->
+    <a class="navbar-brand" href="#">Digital Books App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+     <!-- <div class="d-flex">
+        <button class= "btn btn-success">SignIn</button>&nbsp;
+      <button class= "btn btn-success">SignUp</button>
+    </div>  -->
+    <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" [routerLink]="['home']">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="LoggedIn(false)"  [routerLink]="['login']">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="LoggedInAsAuthor(true)" [routerLink]="['author/home']">Author</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="LoggedInAsReader(true)" [routerLink]="['home']">Reader</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="LoggedInAsReader(true)" [routerLink]="['myorders']">My Orders</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="LoggedInAsReader(true)" [routerLink]="['home']">My Wallet</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" style="cursor:pointer" *ngIf="LoggedInAsReader(true) || LoggedInAsAuthor(true)" (click)="Logout()">Logout</a>
+        </li>     
+        </ul>     
+      </div>
+</div>
+   
+</nav>  
+<router-outlet></router-outlet>
+
+<!-- <footer class="text-center text-white" style="background-color: #f1f1f1;"> -->
+  <!-- Grid container -->
+  <!-- <div class="container pt-4"> -->
+    <!-- Section: Social media -->
+    <!-- <section class="mb-4"> -->
+      <!-- Facebook -->
+      <!-- <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-facebook-f"></i
+      ></a> -->
+
+      <!-- Twitter -->
+      <!-- <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-twitter"></i
+      ></a> -->
+
+      <!-- Google -->
+      <!-- <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-google"></i
+      ></a> -->
+
+      <!-- Instagram -->
+      <!-- <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-instagram"></i
+      ></a> -->
+
+      <!-- Linkedin -->
+      <!-- <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-linkedin"></i
+      ></a> -->
+      <!-- Github -->
+      <!-- <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section> -->
+    <!-- Section: Social media -->
+  <!-- </div> -->
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <!-- <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-dark" href="http://localhost:4200">DigitalBook.com</a>
+  </div> -->
+  <!-- Copyright -->
+ <!--</footer> -->
+<!-- <table>
+<tr>
+    <td><a [routerLink]="['home']">Home</a></td>
+    <td><a [routerLink]="['author/add']">Author</a></td>
+    <td><a [routerLink]="['reader/add']">Reader</a></td>
+</tr>
+</table> -->
+<!-- <footer>
+  <p  class="text center">© Copyright 2022. All rights reserved.</p>
+</footer> -->
+

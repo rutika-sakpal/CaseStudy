@@ -1,0 +1,74 @@
+<!-- <div class="order-history">
+<table>
+    <tr>
+        <td>Order Number</td>
+    </tr>
+ <tr *ngFor="let mdata of ModelData">
+        <td>{{mdata.userId}}</td>
+    </tr>
+</table> 
+</div> -->
+<br/>
+<div class="text-center">
+<h4>Order History</h4></div>
+<div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+<form>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Order Number</th>
+      <th scope="col" sortable="ordertotal" >Order Total</th>
+      <th scope="col" sortable="title" >Title</th>
+      <th scope="col" sortable="paymentmethod" >Payment Method</th>
+      <th scope="col" sortable="orderstatus" >Order Status</th>
+      <th scope="col" sortable="action">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let mdata of ModelData">
+      
+      <td> {{mdata.orderId}} </td>
+      <td>₹{{mdata.amount}}</td>
+      <td>{{mdata.title}}</td>
+      <td>{{mdata.paymentMethod}} </td>
+      <td>{{mdata.isOrderActive}}</td>
+      <td>
+        <button class="btn btn-primary" (click)="openModal(mdata.orderId)" *ngIf="mdata.isOrderActive == 'Active'" >Cancel Order</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</form>
+</div>
+</div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Cancel Order</h4>
+        
+        <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
+            aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+      
+        <div *ngFor="let odata of OrderData">
+          <img src="https://localhost:44307/{{odata.image}}" height="200" width="300">
+          <p>Title: {{odata.title}}</p>
+          <p>Payment Method: {{odata.paymentMethod}}</p>
+          <p>Order Total: {{odata.amount}}</p> 
+          <p>Card Holder: {{odata.cardHolderName}}</p> 
+          <p class="text-center">Are you sure you want to cancel the order?</p>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="CancelOrder(odata.orderId)">Cancel Order</button>
+          </div>
+             
+      </div>
+   
+      
+    </div>  
+    </div>
+  </div>
+</div>
+

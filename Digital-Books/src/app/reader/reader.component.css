@@ -1,0 +1,10 @@
+.image {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .overlay {
+    position: absolute;
+    right: 0;
+    z-index: 5;
+  }
