@@ -1,0 +1,10 @@
+D:\NewCaseStudy\Common\bin\Release\netcoreapp3.1\Common.deps.json
+D:\NewCaseStudy\Common\bin\Release\netcoreapp3.1\Common.dll
+D:\NewCaseStudy\Common\bin\Release\netcoreapp3.1\Common.pdb
+D:\NewCaseStudy\Common\obj\Release\netcoreapp3.1\Common.csproj.AssemblyReference.cache
+D:\NewCaseStudy\Common\obj\Release\netcoreapp3.1\Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\NewCaseStudy\Common\obj\Release\netcoreapp3.1\Common.AssemblyInfoInputs.cache
+D:\NewCaseStudy\Common\obj\Release\netcoreapp3.1\Common.AssemblyInfo.cs
+D:\NewCaseStudy\Common\obj\Release\netcoreapp3.1\Common.csproj.CoreCompileInputs.cache
+D:\NewCaseStudy\Common\obj\Release\netcoreapp3.1\Common.dll
+D:\NewCaseStudy\Common\obj\Release\netcoreapp3.1\Common.pdb

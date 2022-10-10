@@ -12,7 +12,12 @@ namespace DigitalBookApp.Controllers
     [ApiController]
     public class ReaderController : ControllerBase
     {
-        DigitalBookDBContext db = new DigitalBookDBContext();
+        DigitalBookDBContext db;
+
+        public ReaderController(DigitalBookDBContext _db)
+        {
+            db = _db;
+        }
 
 
         [HttpPost]

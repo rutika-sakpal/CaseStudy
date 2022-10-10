@@ -1,0 +1,10 @@
+D:\NewCaseStudy\Shared.Model\bin\Release\netcoreapp3.1\Shared.Model.deps.json
+D:\NewCaseStudy\Shared.Model\bin\Release\netcoreapp3.1\Shared.Model.dll
+D:\NewCaseStudy\Shared.Model\bin\Release\netcoreapp3.1\Shared.Model.pdb
+D:\NewCaseStudy\Shared.Model\obj\Release\netcoreapp3.1\Shared.Model.csproj.AssemblyReference.cache
+D:\NewCaseStudy\Shared.Model\obj\Release\netcoreapp3.1\Shared.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\NewCaseStudy\Shared.Model\obj\Release\netcoreapp3.1\Shared.Model.AssemblyInfoInputs.cache
+D:\NewCaseStudy\Shared.Model\obj\Release\netcoreapp3.1\Shared.Model.AssemblyInfo.cs
+D:\NewCaseStudy\Shared.Model\obj\Release\netcoreapp3.1\Shared.Model.csproj.CoreCompileInputs.cache
+D:\NewCaseStudy\Shared.Model\obj\Release\netcoreapp3.1\Shared.Model.dll
+D:\NewCaseStudy\Shared.Model\obj\Release\netcoreapp3.1\Shared.Model.pdb

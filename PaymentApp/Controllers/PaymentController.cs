@@ -14,7 +14,12 @@ namespace PaymentApp.Controllers
     [ApiController]
     public class PaymentController : ControllerBase
     {
-        DigitalBookDBContext db = new DigitalBookDBContext();
+        DigitalBookDBContext db;
+
+        public PaymentController(DigitalBookDBContext _db)
+        {
+            db = _db;
+        }
 
         [HttpGet]
         [Route("GetAllReaderOrdersById")]

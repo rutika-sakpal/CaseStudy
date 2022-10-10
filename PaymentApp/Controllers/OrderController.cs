@@ -13,7 +13,12 @@ namespace PaymentApp.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        DigitalBookDBContext db = new DigitalBookDBContext();
+        DigitalBookDBContext db;
+
+        public OrderController(DigitalBookDBContext _db)
+        {
+            db = _db;
+        }
         private readonly IBus bus;
         public OrderController(IBus _bus)
         {

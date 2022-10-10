@@ -7,7 +7,9 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class LoginServiceService {
   _loginUrl="https://localhost:44363/api/gateway/digitalBook/login";
+  //_loginUrl="http://4.227.184.79/api/gateway/digitalBook/login";
   _registerUrl="https://localhost:44363/api/gateway/digitalBook/register";
+  //_registerUrl="http://4.227.184.79/api/gateway/digitalBook/register";
 
   constructor(private http:HttpClient, private _router:Router,private jwt: JwtHelperService) { }
   public role ='';

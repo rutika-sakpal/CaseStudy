@@ -8,3 +8,13 @@ C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Sep-2022-Conz\Ticketing.WebApi\Sha
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Sep-2022-Conz\Ticketing.WebApi\Shared.Model\obj\Debug\netcoreapp3.1\Shared.Model.csproj.CoreCompileInputs.cache
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Sep-2022-Conz\Ticketing.WebApi\Shared.Model\obj\Debug\netcoreapp3.1\Shared.Model.dll
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Sep-2022-Conz\Ticketing.WebApi\Shared.Model\obj\Debug\netcoreapp3.1\Shared.Model.pdb
+D:\NewCaseStudy\Shared.Model\bin\Debug\netcoreapp3.1\Shared.Model.deps.json
+D:\NewCaseStudy\Shared.Model\bin\Debug\netcoreapp3.1\Shared.Model.dll
+D:\NewCaseStudy\Shared.Model\bin\Debug\netcoreapp3.1\Shared.Model.pdb
+D:\NewCaseStudy\Shared.Model\obj\Debug\netcoreapp3.1\Shared.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\NewCaseStudy\Shared.Model\obj\Debug\netcoreapp3.1\Shared.Model.AssemblyInfoInputs.cache
+D:\NewCaseStudy\Shared.Model\obj\Debug\netcoreapp3.1\Shared.Model.AssemblyInfo.cs
+D:\NewCaseStudy\Shared.Model\obj\Debug\netcoreapp3.1\Shared.Model.csproj.CoreCompileInputs.cache
+D:\NewCaseStudy\Shared.Model\obj\Debug\netcoreapp3.1\Shared.Model.dll
+D:\NewCaseStudy\Shared.Model\obj\Debug\netcoreapp3.1\Shared.Model.pdb
+D:\NewCaseStudy\Shared.Model\obj\Debug\netcoreapp3.1\Shared.Model.csproj.AssemblyReference.cache

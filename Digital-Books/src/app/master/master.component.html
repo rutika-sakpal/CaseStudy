@@ -27,9 +27,9 @@
           <li class="nav-item">
             <a class="nav-link" *ngIf="LoggedInAsReader(true)" [routerLink]="['myorders']">My Orders</a>
           </li> 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" *ngIf="LoggedInAsReader(true)" [routerLink]="['home']">My Wallet</a>
-          </li> 
+          </li>  -->
           <li class="nav-item">
             <a class="nav-link" style="cursor:pointer" *ngIf="LoggedInAsReader(true) || LoggedInAsAuthor(true)" (click)="Logout()">Logout</a>
         </li>     

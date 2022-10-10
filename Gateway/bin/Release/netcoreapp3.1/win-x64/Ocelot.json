@@ -1,0 +1,52 @@
+{
+  "Routes": [
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Login/login-user",
+      "DownstreamScheme": "https",
+      "ServiceName": "digitalBookService",
+      "UpstreamPathTemplate": "/api/gateway/digitalBook/login",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Login/register-user",
+      "DownstreamScheme": "https",
+      "ServiceName": "digitalBookService",
+      "UpstreamPathTemplate": "/api/gateway/digitalBook/register",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Reader/SearchAllBooks",
+      "DownstreamScheme": "https",
+      "ServiceName": "digitalBookService",
+      "UpstreamPathTemplate": "/api/gateway/digitalBook/SearchAllBooks",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Reader/GetAuthorBookByAuthorBookID",
+      "DownstreamScheme": "https",
+      "ServiceName": "digitalBookService",
+      "UpstreamPathTemplate": "/api/gateway/digitalBook/GetAuthorBookByAuthorBookID",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Author/GetAllAuthorBook",
+      "DownstreamScheme": "https",
+      "ServiceName": "digitalBookService",
+      "UpstreamPathTemplate": "/api/gateway/author/GetAllAuthorBook",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    // "BaseUrl": "http://localhost:44363"
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": "8500",
+      "Type": "Consul"
+    }
+  }
+}

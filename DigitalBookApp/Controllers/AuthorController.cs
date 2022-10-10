@@ -18,7 +18,12 @@ namespace DigitalBookApp.Controllers
 
     public class AuthorController : ControllerBase
     {
-        DigitalBookDBContext db = new DigitalBookDBContext();
+        DigitalBookDBContext db;
+
+        public AuthorController(DigitalBookDBContext _db)
+        {
+            db = _db;
+        }
 
 
         [HttpGet]
